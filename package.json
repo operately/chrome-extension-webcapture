@@ -1,0 +1,13 @@
+{
+  "name": "operately-web-capture",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/background.js && node --check src/popup.js && node --check src/options.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

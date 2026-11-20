@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Capture to Operately</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand" aria-label="Operately">
+          <img src="../icons/icon.svg" alt="" aria-hidden="true" />
+          <span>Operately</span>
+        </div>
+        <button class="icon-button" id="settings-button" type="button" aria-label="Open settings" title="Settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/></svg>
+        </button>
+      </header>
+
+      <section id="loading-view" class="view loading-view" aria-live="polite">
+        <span class="spinner"></span>
+        <p>Loading your destinations…</p>
+      </section>
+
+      <section id="capture-view" class="view hidden">
+        <div class="eyebrow">New task from page</div>
+        <form id="capture-form">
+          <label class="field">
+            <span>Task name</span>
+            <textarea id="task-name" rows="2" maxlength="300" required></textarea>
+          </label>
+
+          <div class="source-card">
+            <span class="source-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.1-1.1"/></svg>
+            </span>
+            <div>
+              <span>Source page</span>
+              <p id="source-host"></p>
+            </div>
+          </div>
+
+          <label class="field">
+            <span>Destination</span>
+            <select id="destination" required></select>
+          </label>
+
+          <label class="assignment-control">
+            <input id="assign-to-me" type="checkbox" checked />
+            <span>Assign to me</span>
+          </label>
+          <p class="error hidden" id="form-error" role="alert"></p>
+
+          <button class="primary-button" id="create-button" type="submit">
+            <span>Create task</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </form>
+      </section>
+
+      <section id="auth-view" class="view message-view hidden">
+        <span class="message-icon coral" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M15 7a4 4 0 1 1-7.6 1.7A4 4 0 0 1 15 7Z"/><path d="m13.8 10.2 7.2 7.2V21h-3.6v-2.2h-2.2v-2.2l-3-3"/></svg>
+        </span>
+        <h1>Sign in to Operately</h1>
+        <p>Your captured page is saved. After you sign in, task capture will reopen automatically.</p>
+        <button class="primary-button" id="sign-in-button" type="button">Sign in</button>
+      </section>
+
+      <section id="empty-view" class="view message-view hidden">
+        <span class="message-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 9h16M8 3v4M16 3v4"/></svg>
+        </span>
+        <h1>No task destinations</h1>
+        <p>You need edit access to an active project or a space task board.</p>
+        <button class="secondary-button" id="open-operately-button" type="button">Open Operately</button>
+      </section>
+
+      <section id="error-view" class="view message-view hidden">
+        <span class="message-icon coral" aria-hidden="true">!</span>
+        <h1>Couldn’t connect</h1>
+        <p id="connection-error"></p>
+        <div class="button-row">
+          <button class="secondary-button" id="retry-button" type="button">Try again</button>
+          <button class="text-button" id="error-settings-button" type="button">Settings</button>
+        </div>
+      </section>
+
+      <section id="success-view" class="view message-view success-view hidden">
+        <span class="message-icon success" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+        </span>
+        <h1>Task created</h1>
+        <p id="created-task-name"></p>
+        <button class="primary-button" id="view-task-button" type="button">View task</button>
+        <button class="text-button" id="done-button" type="button">Done</button>
+      </section>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
