@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "permissions": ["activeTab", "storage"],
   "host_permissions": ["https://app.operately.com/*"],
-  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "optional_host_permissions": ["https://*/*", "http://localhost/*", "http://127.0.0.1/*"],
   "background": {
     "service_worker": "src/background.js",
     "type": "module"

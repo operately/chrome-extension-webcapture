@@ -11,8 +11,9 @@ export function normalizeBaseUrl(value) {
     throw new Error("Enter a complete URL, such as https://app.operately.com");
   }
 
-  if (url.protocol !== "https:" && url.protocol !== "http:") {
-    throw new Error("The server URL must start with http:// or https://");
+  const localHttp = url.protocol === "http:" && ["localhost", "127.0.0.1"].includes(url.hostname);
+  if (url.protocol !== "https:" && !localHttp) {
+    throw new Error("Use HTTPS for Operately servers. HTTP is supported only for local development.");
   }
 
   if (url.username || url.password || url.search || url.hash) {
@@ -25,7 +26,7 @@ export function normalizeBaseUrl(value) {
 
 export function permissionPattern(baseUrl) {
   const url = new URL(normalizeBaseUrl(baseUrl));
-  return `${url.origin}/*`;
+  return `${url.protocol}//${url.hostname}/*`;
 }
 
 export function belongsToServer(pageUrl, baseUrl) {

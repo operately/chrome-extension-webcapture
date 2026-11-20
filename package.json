@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "check": "node --check src/background.js && node --check src/popup.js && node --check src/options.js"
+    "check": "node --check src/background.js && node --check src/popup.js && node --check src/options.js",
+    "package": "sh scripts/package-extension.sh"
   },
   "engines": {
     "node": ">=20"

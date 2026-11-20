@@ -2,6 +2,8 @@
 
 A focused Chrome extension that turns the current webpage into an Operately task.
 
+[Privacy policy](PRIVACY.md)
+
 ## What it does
 
 - Prefills an editable task name from the page title.
@@ -20,7 +22,7 @@ A focused Chrome extension that turns the current webpage into an Operately task
 3. Choose **Load unpacked** and select this directory.
 4. Pin **Capture to Operately** to the toolbar.
 
-The default server is `https://app.operately.com`. For a self-hosted installation, open the extension settings and enter its base URL. Chrome will ask for access to that specific host.
+The default server is `https://app.operately.com`. For a self-hosted installation, open the extension settings and enter its HTTPS base URL. Chrome will ask for access to that specific host. Plain HTTP is accepted only for `localhost` and `127.0.0.1` development servers.
 
 ## Development
 
@@ -29,6 +31,7 @@ The extension has no build step or runtime dependencies.
 ```sh
 npm test
 npm run check
+npm run package
 ```
 
 Reload the extension from `chrome://extensions` after changing source files.
@@ -40,3 +43,7 @@ Reload the extension from `chrome://extensions` after changing source files.
 - Operately host access: sends authenticated API requests to the configured Operately server. Self-hosted access is requested only when that server is saved in settings.
 
 The extension does not inject scripts into webpages and does not send capture data anywhere except the configured Operately server.
+
+## Releases
+
+`npm run package` creates a Chrome Web Store-ready ZIP in `dist/`. Store listing copy, privacy disclosures, and image assets are kept in [`store-assets`](store-assets/).

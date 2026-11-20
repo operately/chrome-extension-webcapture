@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#024fac"/>
+      <stop offset="1" stop-color="#3185ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#012d64" flood-opacity=".28"/>
+    </filter>
+  </defs>
+
+  <rect width="440" height="280" rx="0" fill="url(#background)"/>
+  <circle cx="55" cy="255" r="116" fill="#fff" opacity=".06"/>
+  <circle cx="388" cy="24" r="92" fill="#fff" opacity=".07"/>
+
+  <g transform="translate(34 30)">
+    <g transform="scale(.055)">
+      <polygon points="602.32 806.96 397.68 806.96 397.68 602.32 602.32 806.96" fill="#b9d8ff"/>
+      <polygon points="397.68 193.04 602.32 193.04 602.32 397.68 397.68 193.04" fill="#b9d8ff"/>
+      <polygon points="602.32 193.04 602.32 397.68 602.32 602.32 602.32 806.96 806.96 602.32 806.96 397.68 602.32 193.04" fill="#fff"/>
+      <polygon points="193.04 397.68 193.04 602.32 397.68 806.96 397.68 602.32 397.68 397.68 397.68 193.04 193.04 397.68" fill="#fff"/>
+    </g>
+    <text x="46" y="34" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Operately</text>
+  </g>
+
+  <text x="34" y="112" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="750" letter-spacing="-.8">
+    <tspan x="34">Turn any webpage</tspan>
+    <tspan x="34" dy="34">into a task.</tspan>
+  </text>
+  <text x="34" y="196" fill="#dcecff" font-family="Inter, Arial, sans-serif" font-size="13">
+    <tspan x="34">Capture the context. Choose a destination.</tspan>
+    <tspan x="34" dy="20">Keep the work moving in Operately.</tspan>
+  </text>
+
+  <g transform="translate(282 43)" filter="url(#shadow)">
+    <rect width="126" height="194" rx="11" fill="#fff"/>
+    <g transform="translate(13 13) scale(.026)">
+      <polygon points="602.32 806.96 397.68 806.96 397.68 602.32 602.32 806.96" fill="#024fac"/>
+      <polygon points="397.68 193.04 602.32 193.04 602.32 397.68 397.68 193.04" fill="#024fac"/>
+      <polygon points="602.32 193.04 602.32 397.68 602.32 602.32 602.32 806.96 806.96 602.32 806.96 397.68 602.32 193.04" fill="#3185ff"/>
+      <polygon points="193.04 397.68 193.04 602.32 397.68 806.96 397.68 602.32 397.68 397.68 397.68 193.04 193.04 397.68" fill="#3185ff"/>
+    </g>
+    <text x="37" y="29" fill="#1d2522" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="700">Operately</text>
+    <line x1="0" y1="42" x2="126" y2="42" stroke="#dde3df"/>
+    <text x="13" y="61" fill="#024fac" font-family="Inter, Arial, sans-serif" font-size="5.5" font-weight="700" letter-spacing=".8">NEW TASK FROM PAGE</text>
+    <text x="13" y="78" fill="#4f5b56" font-family="Inter, Arial, sans-serif" font-size="6.5" font-weight="700">Task name</text>
+    <rect x="13" y="84" width="100" height="35" rx="5" fill="#fff" stroke="#cbd3ce"/>
+    <text x="20" y="99" fill="#1d2522" font-family="Inter, Arial, sans-serif" font-size="7">Build launch plan</text>
+    <text x="20" y="109" fill="#1d2522" font-family="Inter, Arial, sans-serif" font-size="7">from research</text>
+    <rect x="13" y="127" width="100" height="18" rx="5" fill="#f5f7f5"/>
+    <circle cx="23" cy="136" r="5" fill="#eaf3ff"/>
+    <path d="M20 136h6M23 133v6" stroke="#024fac" stroke-width="1" stroke-linecap="round"/>
+    <text x="32" y="138.5" fill="#69736f" font-family="Inter, Arial, sans-serif" font-size="5.5">Source page included</text>
+    <rect x="13" y="153" width="100" height="27" rx="6" fill="#024fac"/>
+    <text x="63" y="170" text-anchor="middle" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="700">Create task</text>
+  </g>
+</svg>

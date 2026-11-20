@@ -16,8 +16,9 @@ import {
 test("normalizes server URLs and permission patterns", () => {
   assert.equal(normalizeBaseUrl(" https://app.operately.com/// "), "https://app.operately.com");
   assert.equal(normalizeBaseUrl("http://localhost:4000/operately/"), "http://localhost:4000/operately");
-  assert.equal(permissionPattern("http://localhost:4000/operately"), "http://localhost:4000/*");
-  assert.throws(() => normalizeBaseUrl("file:///tmp/operately"), /http/);
+  assert.equal(permissionPattern("http://localhost:4000/operately"), "http://localhost/*");
+  assert.throws(() => normalizeBaseUrl("file:///tmp/operately"), /HTTPS/);
+  assert.throws(() => normalizeBaseUrl("http://operately.example.com"), /HTTPS/);
   assert.throws(() => normalizeBaseUrl("https://example.com/?token=secret"), /query/);
 });
 
